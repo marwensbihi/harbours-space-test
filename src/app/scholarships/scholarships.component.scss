@@ -1,0 +1,91 @@
+$purple: #685dc5;
+$border: 1px solid #dadada;
+$borderRadius: 4px;
+
+.about-section {
+    margin-top: 20rem;
+    position: relative;
+    background: rgb(104,93,197);
+    background: linear-gradient(180deg, rgba(104,93,197,1) 75%, rgba(255,255,255,0.6586835417760855) 75%); 
+  
+    .about-top {
+      position: relative;
+      width: calc(100% + 4rem);
+      margin-left: -2rem;
+      padding: 0 2rem;
+      
+      .wrapper {
+        padding: 2rem;
+        margin-top: -4rem;
+        border: $border;
+        border-top: 0;
+        border-radius: 0 0 $borderRadius;
+        background: #fff;
+      }
+      .about-img-holder {
+        border-radius: 50%;
+        width: 35rem;
+        height: 35rem;
+        background: url(../../assets/images/pattern.png);
+        background-size: 50rem;
+        border: 1px solid #f2f2f2;
+        margin-top: -20rem;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+  
+        img {
+          border-radius: 50%;
+          width: 31rem;
+          height: 31rem;
+  
+          &.img-desktop {
+            display: none;
+          }
+  
+          &.img-mobile {
+            display: block;
+          }
+        }
+  
+      }
+  
+      @media (min-width:820px) {
+        .wrapper {
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          align-items: center;
+          border: 0;
+          padding: 0;
+        }
+      }
+    }
+  
+    @media (min-width:820px) {
+      background: none;
+      margin-top: 10rem;
+  
+      .about-top {
+        .about-img-holder {
+          margin-top: 0;
+  
+          img {
+            &.img-desktop {
+              display: block;
+            }
+  
+            &.img-mobile {
+              display: none;
+            }
+          }
+        }
+      }
+  
+    }
+  
+    h1 {
+      color: $purple;
+    }
+  }

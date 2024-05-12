@@ -1,0 +1,95 @@
+.container{
+    margin-top: 50px;
+  }
+  .faq-section {
+    margin-right: 5px;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .faq-section h2{ 
+      text-decoration: none;   
+     color: #685dc5
+   }
+  .filter-by {
+    display: flex;
+   
+    align-items: center;
+  }
+  
+  .filter-select{  
+   text-align: left;
+  }
+
+  .select-container{
+    width: 100%;
+    padding: 10px;
+    color: #685dc5;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded border */
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;  
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .select-container::after {  
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; 
+  }
+  
+  .filter-by label {
+    margin-right: 10px;
+  }
+  
+  .filter-by select {
+    width: 235px;
+    height: 58px;
+    left: 82px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  li {
+    list-style-type: none; 
+  }
+  
+  h3 {
+    display: inline-block; 
+    text-decoration: none;
+    font-size:22px ;
+    padding-bottom: 5px; 
+  }
+  .types{
+    color: #685dc5;
+  }
+  .row{ 
+    margin-top: 50px;
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  button { 
+    top: 0; 
+    right: 0; 
+    border: none;
+    border-radius: 50%; 
+    width: 48px;
+    height: 48px;
+    left: 960px;
+    gap: 0px;
+  opacity: 0px;
+  
+    text-align: center;
+  }
+  
+  button.active {
+    background-color:#685dc5;
+  }
+  

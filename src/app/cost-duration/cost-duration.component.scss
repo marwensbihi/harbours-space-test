@@ -1,0 +1,121 @@
+$purple: #685dc5;
+$border: 1px solid #dadada;
+$borderRadius: 4px;
+
+
+
+  .kpis {
+    .about-cards {
+      margin-top: 5rem;
+  
+      h6 {
+        color: $purple;
+      }
+  
+      p.sub-heading {
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+      }
+  
+      .cost {
+        margin: 5rem 0;
+        position: relative;
+  
+        p {
+          font-size: 2.4rem;
+        }
+  
+        .cost-details {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          margin-top: 2rem;
+  
+          .living {
+            grid-column: 1 / span 2;
+          }
+        }
+  
+        @media (min-width:820px) {
+          border: $border;
+          border-radius: 5px;
+          padding: 3rem;
+          margin: 0;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+  
+          .cost-details {
+            border-top: $border;
+            padding-top: 5rem;
+            margin-top: auto;
+          }
+  
+          p {
+            font-size: 1.6rem;
+          }
+  
+          .total {
+            font-size: 4.8rem;
+          }
+        }
+      }
+  
+      .about-card {
+        padding: 4rem 3rem;
+        margin-bottom: 2rem;
+      }
+    
+      .graduation-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        h4 {
+          background-color: #fff;
+          padding: 0 3rem;
+        }
+        hr {
+          width: 100%;
+          margin: 0;
+        }
+      }
+  
+      @media (min-width: 820px) {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat (3 ,1fr);
+        gap: 3rem;
+  
+        .about-card,.graduation-label {
+          margin-bottom: 0;
+        }
+    
+        .cost {
+          grid-row: 1 / span 3;
+        }
+    
+        .study {
+          grid-column: 2 / span 1;
+          grid-row: 1 / span 1;
+        }
+    
+        .work {
+          grid-column: 3 / span 1;
+          grid-row: 1 / span 1;
+        }
+    
+        .graduation-label {
+          grid-column: 2 / span 2;
+          grid-row: 2 / span 1;
+        }
+    
+        .contract {
+          grid-column: 2 / span 2;
+        }
+      }
+  
+  
+    }
+  }
+  
