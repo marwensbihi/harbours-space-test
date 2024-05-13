@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiCallService } from '../shared/api-call.service';
 import { DatePipe } from '@angular/common';
-
+import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-about-program',
   templateUrl: './about-program.component.html',
   styleUrls: ['./about-program.component.scss']
 })
-export class AboutProgramComponent implements OnInit {
+export class AboutProgramComponent implements OnInit, OnDestroy {
 
   aboutHarbourSpace!:string
   location!:string
@@ -16,6 +16,7 @@ export class AboutProgramComponent implements OnInit {
   duration!:string
   position!:string
 
+  private unsubscribe$: Subject<void> = new Subject<void>();
   constructor(private api: ApiCallService, private datePipe : DatePipe) { }
 
   ngOnInit(): void {
@@ -23,7 +24,9 @@ export class AboutProgramComponent implements OnInit {
 
   }
    getData(){
-    this.api.getData().subscribe((data)=>{
+    this.api.getData().pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe((data)=>{
       this.aboutHarbourSpace = data.scholarship.description[0].data
       this.location = data.scholarship.location.name
       this.startDate = this.formatDate(data.scholarship.scholarship_start_date);
@@ -39,6 +42,11 @@ export class AboutProgramComponent implements OnInit {
     })
    }
 
+   ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
    formatDate(dateString: string): string {
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {    
@@ -47,4 +55,6 @@ export class AboutProgramComponent implements OnInit {
       return this.datePipe.transform(date, 'dd MMM yyyy') || '';
     }
   }
+
+
 }

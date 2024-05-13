@@ -1,3 +1,4 @@
+$purple: #685dc5;
 .container{
     margin-top: 50px;
   }
@@ -10,7 +11,7 @@
   }
   .faq-section h2{ 
       text-decoration: none;   
-     color: #685dc5
+     color: $purple
    }
   .filter-by {
     display: flex;
@@ -25,14 +26,14 @@
   .select-container{
     width: 100%;
     padding: 10px;
-    color: #685dc5;
+    color: $purple;
     border: 1px solid #ccc;
-    border-radius: 25px; /* Rounded border */
-    appearance: none; /* Remove default arrow */
+    border-radius: 25px; 
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;  
-    text-align: center; /* Center align text */
-    cursor: pointer; /* Change cursor on hover */
+    text-align: center; 
+    cursor: pointer; 
   }
   
   .select-container::after {  
@@ -68,7 +69,8 @@
     padding-bottom: 5px; 
   }
   .types{
-    color: #685dc5;
+    font-size: 22px;
+    color: $purple;
   }
   .row{ 
     margin-top: 50px;
@@ -90,6 +92,6 @@
   }
   
   button.active {
-    background-color:#685dc5;
+    background-color:$purple;
   }
   

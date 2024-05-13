@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiCallService } from '../shared/api-call.service';
 
 @Component({
   selector: 'app-cost-duration',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CostDurationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiCallService : ApiCallService) { }
 
   ngOnInit(): void {
   }
+  getData(){
+    this.apiCallService.getData().subscribe((data)=>{
 
+    });
+}
 }

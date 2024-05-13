@@ -1,30 +1,34 @@
-
+$purple: #685dc5;
+$green:#4FA16C; 
+$white:#fff;
 .navbar {
-    background-color: rgb(104,93,197) ;
+    background-color: $purple;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    padding: 1rem 2rem;   
-    height: 130.08px;
-    left: 0px;
-    top: 0px;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 1rem 2rem;
   } 
+.navbar-brand h2,
+.navbar-brand p {
+  margin-right: 5px; 
+}
   
   .button-container {
     position: fixed;
-    top: 10%; 
-    right: 150px;    
+    top: 4%; 
+    right: 150px; 
+    z-index: 9999;   
   }
 
   .navbar .navbar-brand h2 {    
-    color: #fff;
+    color: $white;
   }
 
   .navbar .navbar-brand p {    
-    color: #fff;
+    color: $white;
     margin-left: 12px;  
     font-size: 0.85em;
+    
   }
 
   .apply-button {
@@ -40,15 +44,15 @@
     width: 100px; 
     height: 100px;    
     border-radius: 50%; 
-    background-color: #4FA16C; 
-    color: #fff; 
+    background-color:$green; 
+    color: $white; 
     transition: height 0.5s ease, width 0.5s ease;    
   }
   
   .apply-button:hover {
     background-color: #307448;
     height: 110px; 
-    width: 110px;
+    width: 110px; 
     
   }
   
@@ -60,39 +64,3 @@
   .apply-button span:first-child {
     margin-bottom: 5px; 
   }
-h1 {
-    font-size: 3em;
-    margin-bottom: 0;
-  }
-  
-  p {
-    font-size: 1.5em;
-    margin-top: 0;
-  }
-  
-  .harbour-space { 
-    width: 100%;    
-    display: flex;
-    align-items: center;
-  }
-  
-  .harbour-space h1 {
-    font-size: 4em;
-  }
-  
-  .harbour-space p {
-    font-size: 2em;
-  }
-
-  
-  @media (max-width: 991.98px) {
-    .navbar-toggler {
-        position: absolute;
-        top: 10px; 
-        right: 10px;
-        z-index: 9999; 
-    }
-    .apply-button{
-      display: none;
-    }
-}
