@@ -16,8 +16,7 @@ export class SliderComponent  {
   constructor(private renderer: Renderer2, private el: ElementRef) { }
   ngOnInit() {
 
-    this.checkScreenSize();
-    this.scrollItemsToCenter();
+   this.scrollItemsToCenter();
   }
 
   scrollItemsToCenter(): void {
@@ -28,9 +27,7 @@ export class SliderComponent  {
     this.renderer.setProperty(items, 'scrollLeft', scrollLeft);
   }
   
-  checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; 
-  }
+ 
 
   end(): void {
     this.isDown = false;

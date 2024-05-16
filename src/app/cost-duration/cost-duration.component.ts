@@ -34,9 +34,7 @@ export class CostDurationComponent implements OnInit {
       this.remaining = data.scholarship.remaining
       this.internship_commitment_text = data.scholarship.internship_commitment_text
       this.study_commitment = data.scholarship.study_commitment
-      this.internship_commitment= data.scholarship.internship_commitment
-
-      console.log('study commitment',this.study_commitment_text)
+      this.internship_commitment= data.scholarship.internship_commitment   
     });
 }
 }

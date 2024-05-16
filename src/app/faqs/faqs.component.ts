@@ -40,8 +40,7 @@ export class FaqsComponent implements OnInit {
       this.filteredFaqs = this.faqs.filter(faq => faq.type === type);
     }
   }
-  
- 
+   
   toggleAnswer(faq: any): void {
     faq.showAnswer = !faq.showAnswer; 
   }

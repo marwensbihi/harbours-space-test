@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Apercu Pro Regular';
+    src: url('./assets/fonts/apercu-pro/apercu_regular_pro.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Apercu Pro Bold';
+    src: url('./assets/fonts/apercu-pro/apercu_bold_pro.otf') format('opentype');
+    font-weight: bold;
+  }
+  
+  html {
+    font-family: Apercu Pro Regular;
+    color: #535353;
+    font-size: 10px;
+  }
