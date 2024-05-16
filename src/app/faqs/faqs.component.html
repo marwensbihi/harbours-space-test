@@ -26,10 +26,10 @@
         </li>
       </ul>
     </div>
-    <div class="col col-md-1">
-      <button (click)="toggleAnswer(faq)" [ngClass]="{'active': faq.showAnswer}">
+    <div class="col col-md-1" >
+      <div (click)="toggleAnswer(faq)" [ngClass]="{'active': faq.showAnswer}" class="custom-button">
         {{ faq.showAnswer ? '-' : '+' }}
-      </button>
+      </div>
     </div>
   </div>
   

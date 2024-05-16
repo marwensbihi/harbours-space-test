@@ -64,3 +64,23 @@ $white:#fff;
   .apply-button span:first-child {
     margin-bottom: 5px; 
   }
+
+  @media  (max-width :767px) {
+
+    .apply-button  {
+      display: none;      
+    }
+    .title{
+      font-size: 19px;
+      width: 153.95px;
+      height: 14.45px;
+      top: 4.73px;
+      left: 3.71px;
+      gap: 0px;
+      opacity: 0px;
+    }
+    img{
+      width: 35px;
+      height: 30px;
+    }
+  }

@@ -1,7 +1,6 @@
 
 <div class="background"></div>
 <div class="wrapper">
-  
   <ul class="items" (mousedown)="start($event)" (touchstart)="start($event)" (mousemove)="move($event)"
     (touchmove)="move($event)" (mouseleave)="end()" (mouseup)="end()" (touchend)="end()">
     
@@ -53,7 +52,7 @@
           This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program. 
         </p>
         
-        <span class="item-body__underparagraph">Education • B.A. Visual Design</span>
+        <div class="item-body__underparagraph">Education • B.A. Visual Design</div>
       </div>
     </li>
 
@@ -148,12 +147,13 @@
     </li>
   </ul>
 
+  <div class="slider-bg"></div>    
 
-  <div class="slider-controls-container">
-  <div class="slider-controls" >
-    <button class="nav-button left" (click)="navigateLeft()"><i class="fas fa-chevron-left"></i></button>
-    <button class="nav-button right" (click)="navigateRight()"><i class="fas fa-chevron-right"></i></button>
-  </div> 
-</div>
+</div> 
 
+<div class="control">
+<div class="slider-controls" >
+  <button class="nav-button left" (click)="navigateLeft()"><i class="fas fa-chevron-left"></i></button>
+  <button class="nav-button right" (click)="navigateRight()"><i class="fas fa-chevron-right"></i></button>
+</div> 
 </div>

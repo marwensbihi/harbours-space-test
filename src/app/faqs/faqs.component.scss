@@ -40,8 +40,7 @@ $purple: #685dc5;
       font-size: 14px; 
       line-height: 24px;
       color: #6A6A6A;
-      letter-spacing: -0.15px;           
-      
+      letter-spacing: -0.15px;  
     }
     
     .select {
@@ -86,21 +85,25 @@ $purple: #685dc5;
     margin-top: 40px;
   }
   
-  button { 
+  .custom-button {
+    cursor: pointer;  
     top: 5px;
     right: 5px;
-    border: none;
-    border-radius: 50%; 
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #DADADA;
+    color: #333;
+    font-weight: 100;
+    font-size: 30px;
     width: 48px;
     height: 48px;
     left: 960px;
     gap: 0px;
-    opacity: 0px;  
     text-align: center;
   }
   
-  button.active {
-    background-color:$purple;
+  .custom-button.active {
+    background-color:$purple;    
   }
   
 
@@ -150,7 +153,7 @@ $purple: #685dc5;
       
       
     }
-    .filter select {
+    .filter .select {
       width: 284px;
       height: 58px;
       left: 0px;
@@ -162,7 +165,6 @@ $purple: #685dc5;
       
     }
     .row {
-
       display: flex;      
       margin-bottom: 2rem;
     }
