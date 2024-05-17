@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef, HostListener } from '@angular/core';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -16,9 +16,7 @@ export class SliderComponent {
 
   ngOnInit() {
     this.checkIfMobile();
-    this.scrollItemsToCenter();
-
-    // Add event listeners for mouse and touch events
+    this.scrollItemsToCenter();    
     const items = this.el.nativeElement.querySelector('.items');
     this.renderer.listen(items, 'mousedown', (e) => this.start(e));
     this.renderer.listen(items, 'touchstart', (e) => this.start(e));
@@ -30,7 +28,14 @@ export class SliderComponent {
   }
 
   ngOnDestroy() {
-    // Clean up event listeners if necessary
+  const items = this.el.nativeElement.querySelector('.items');
+  items.removeEventListener('mousedown', this.start);
+  items.removeEventListener('touchstart', this.start);
+  items.removeEventListener('mousemove', this.move);
+  items.removeEventListener('touchmove', this.move);
+  items.removeEventListener('mouseup', this.end);
+  items.removeEventListener('mouseleave', this.end);
+  items.removeEventListener('touchend', this.end);
   }
 
   checkIfMobile(): void {
@@ -42,6 +47,7 @@ export class SliderComponent {
     const itemWidth = 600;
     const containerWidth = items.offsetWidth;
     const scrollLeft = (containerWidth - itemWidth) / 2;
+    console.log('scrollLeft value is : ',scrollLeft)
     this.renderer.setProperty(items, 'scrollLeft', scrollLeft);
   }
 

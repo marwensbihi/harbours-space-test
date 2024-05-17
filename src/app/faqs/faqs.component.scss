@@ -128,9 +128,6 @@ $purple: #685dc5;
       margin-bottom: 120px;
       
     }
-    .types {
-      display: none;
-    }
   
     .filter {
       width: 284px;
@@ -167,7 +164,11 @@ $purple: #685dc5;
     .row {     
       display: flex;      
       margin-bottom: 2rem;
-    }
+      .types {
+        
+        display: none;
+      }
+    
     .col-md-8 {
       flex: 0 0 78.66667%;
       max-width: 78.66667%;
@@ -180,7 +181,8 @@ $purple: #685dc5;
       position: sticky;
       top: 0;
       right: 0;
-      left: 0.99px;
+      left: 0.199px;
     }
+  }
   }
   
