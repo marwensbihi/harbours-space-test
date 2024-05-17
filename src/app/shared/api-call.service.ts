@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiCallService {
+  static getData(getData: any) {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = environment.api
   
   

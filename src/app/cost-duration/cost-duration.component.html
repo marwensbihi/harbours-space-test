@@ -1,38 +1,37 @@
-
 <div class="section kpis container">
   <div class="content">
       <div class="about-cards">
           <div class="cost">
               <div class="cost-total">
                   <h6>Scolarship Value</h6>
-                  <p class="total">$31,300</p>
+                  <p class="total"> {{total_value | currency:'EUR':'symbol':'1.0-0'}} </p>
               </div>
               <div class="cost-details">
                   <div class="tuition">
                       <h6>Tuition covered</h6>
-                      <p>$20,900</p>
+                      <p> {{tuition | currency:'EUR':'symbol':'1.0-0'}} </p>
                   </div>
                   <div class="remaining">
                       <h6>Reamining</h6>
-                      <p>$2,000</p>
+                      <p> {{remaining | currency:'EUR':'symbol':'1.0-0'}} </p>
                   </div>
                   <div class="living">
                       <h6>Living stipend</h6>
-                      <p>$8,400 ($700/month)</p>
+                      <p> {{stipend_per_year | currency:'EUR':'symbol':'1.0-0'}} ({{stipend_per_month | currency:'EUR':'symbol':'1.0-0'}}/ month)</p>
                   </div>
               </div>
           </div>
           <div class="about-card study box">
               <h6>Study commitment</h6>
-              <p class="sub-heading">3 hours / day</p>
+              <p class="sub-heading"> {{study_commitment}} hours / day</p>
               <hr class="box-hr">
-              <p>You will complete 15 modules to graduate. Daily classes are 3 hours, plus coursework to complete in your own time. </p>
+              <p> {{study_commitment_text}} </p>
           </div>
           <div class="about-card work box">
               <h6>Work Commitment</h6>
-              <p class="sub-heading">4 hours / day</p>
+              <p class="sub-heading"> {{internship_commitment}} hours / day</p>
               <hr class="box-hr">
-              <p>Immerse yourself in the professional world during your apprenticeship. You’ll learn the ropes from the best and get to apply your newly acquired knowledge in the field from day one.  </p>
+              <p> {{internship_commitment_text}}  </p>
           </div>
           <div class="graduation-label">
               <hr class="box-hr">

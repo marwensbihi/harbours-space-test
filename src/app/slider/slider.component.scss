@@ -1,0 +1,279 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+$purple: #685dc5;
+.wrapper {
+  position: relative;
+  background-color: #ffffff;
+  margin: 120px 0 20px 0;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  
+  .slider-bg {
+    height: 300px;
+    background: url(../../assets/images/patter-small.png);    
+    background-size: 50px;
+    width: 60%; 
+    position: absolute;
+    top: -80px;
+    
+  }
+
+
+  &:before {
+    left: 0;
+    background: linear-gradient(90deg, #222, transparent);
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(-90deg, #222, transparent);
+  }
+}
+.background{
+  background-color: $purple;
+}
+
+
+.items {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  height: fit-content;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 10;
+
+  &.active {
+    cursor: grab;
+  }
+ 
+}
+
+.drag{  
+  width: 117px;
+  height: 57px;
+  top: 2457.08px;
+  left: 812px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.item {
+  display: inline-block;
+  margin-left: 30px;
+  
+  border: #f0f0f0 solid 1px;
+  border-radius: 3px;
+  background: rgb(236, 236, 236);
+  width: 800px;
+
+  font-weight: bold;
+  text-align: center;  
+  border-radius: 0px, 0px, 4px, 4px;
+  &:hover {
+    svg {
+      fill: #ababab;
+    }
+  }
+
+  .item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+
+    .item-header__left {
+      display: flex;
+      flex-direction: row;
+      .header__img {
+        position: relative;
+        height: 75px;
+        width: 75px;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+        .header__img-chip {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 20px;
+          height: auto;
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .header__title {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin-left: 20px;
+      }
+    }
+
+    .item-header__right {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      svg {
+        transition: fill 0.3s ease-in-out;
+      }
+    }
+
+    .title {
+      font-size: 0.9rem;
+      color: #222;
+    }
+    .title-muted {
+      font-size: 0.9rem;
+      color: #969696;
+      font-weight: lighter;
+    }
+  }
+
+  .item-body {
+    height: 100%;    
+    background-color: #fafafa;
+    text-wrap: wrap;
+    text-align: start;
+    padding: 40px 50px 40px 50px;
+    
+    .item-body__paragraph {
+      width: 561px;
+      height: 137.58px;
+      gap: 0px;
+      opacity: 0px;      
+      font-family: Apercu Pro Regular;
+      font-weight: lighter;
+      font-size: 2.2rem;
+      text-justify: distribute;
+      color: #838383;
+      margin: 0;
+
+    }
+    .item-body__underparagraph {
+
+      width: 292px;
+      height: 24px;
+      top: 169px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: 'Apercu Pro Regular';
+      font-size: 1.2rem;
+      font-weight: lighter;
+      color: #838383;
+    }
+  }
+
+  &:last-child {
+    margin-right: 30px;
+  }
+}
+
+.slider-controls {
+  
+  display: none;
+ 
+
+}
+
+.nav-button {
+  width: 48px;
+  height: 48px;  
+  border-radius: 50%;
+  border:1px;
+  background-color: #ECECEC;
+  color: #201f1f;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #555;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    .slider-bg {
+      height: 300px;
+      background: url(../../assets/images/patter-small.png);
+      background-color: $purple;
+      background-size: 50px;
+      width: 100%; 
+      position: absolute;
+      top: -80px;
+    }
+  }
+  .items {
+    position: relative;
+    width: 100%;  
+    
+    cursor: pointer;
+    z-index: 10;
+ }
+
+  .item {          
+    width: auto;         
+    z-index: 100;   
+   
+    } 
+  
+    .item-body{
+      position: relative;
+      height: 150px;
+      width: 375px;         
+      left: 0px;
+      gap: 0px;
+      opacity: 0px;
+    }
+  
+   .item-body__paragraph{
+    display: contents;
+    width: 237px;
+    height: 203px;       
+    gap: 0px;
+    opacity: 0px;
+  }
+  
+ .item-body__underparagraph {   
+    display: inline-block;
+    font-family: 'Apercu Pro Regular';    
+    font-size: 1.5rem;
+    width: 240px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: -0.1099999964237213px;
+    text-align: left;
+    margin-top: 20px;  
+    
+  }
+
+
+  .control{
+      .left{
+        margin: 4px;
+      }
+      .right{
+        margin: 4px;
+      }
+    }
+    .slider-controls{   
+      display: flex;
+      justify-content: end;         
+    }
+}

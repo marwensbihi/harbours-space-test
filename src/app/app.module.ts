@@ -11,9 +11,10 @@ import { AboutProgramComponent } from './about-program/about-program.component';
 import { CostDurationComponent } from './cost-duration/cost-duration.component';
 import { FormsModule } from '@angular/forms';
 import { ScholarshipsComponent } from './scholarships/scholarships.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
-  declarations: [
+  declarations: [    
     AppComponent,
     SliderComponent,
     HeaderComponent,
@@ -24,12 +25,13 @@ import { ScholarshipsComponent } from './scholarships/scholarships.component';
     
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

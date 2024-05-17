@@ -1,33 +1,36 @@
 <div class="container">
-    <div class="faq-section">
-      <h2>Frequently Asked 
-        <br>
-        questions</h2>
-      <div class="filter-by ">
-        <label for="filter-select">Filter By:</label>
-        <select  class="select-container" [(ngModel)]="selectedType" (change)="filterByType(selectedType)">
-          <option *ngFor="let type of types" [value]="type">{{ type }}</option>
-        </select>
-      </div>
+
+  <div class="faq-section-header">
+    <h2>Frequently Asked 
+      <br>
+      questions</h2>
+      
+    <div class="filter ">
+      <label for="filter-by" class="filter-by">Filter by:</label>      
+      <select  class="select" [(ngModel)]="selectedType" (change)="filterByType(selectedType)">             
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>      
     </div>
-    <div class="row" *ngFor="let faq of filteredFaqs">
-  
-      <div class="col-md-3 types" >
-        {{ faq.type }}
-      </div>
-  
-      <div class="col-md-8">
-        <ul>
-          <li>
-            <h3>{{ faq.question }}</h3>        
-            <p *ngIf="faq.showAnswer">{{ faq.answer[0].data }}</p>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-1">
-        <button (click)="toggleAnswer(faq)" [ngClass]="{'active': faq.showAnswer}">
-          {{ faq.showAnswer ? '-' : '+' }}
-        </button>
+  </div>
+<hr>
+  <div class="row" *ngFor="let faq of filteredFaqs">
+    <div class="col col-md-3 types" >
+      {{ faq.type }}
+    </div>
+
+    <div class="col col-md-8">
+      <ul>
+        <li>
+          <h3>{{ faq.question }}</h3>        
+          <p *ngIf="faq.showAnswer">{{ faq.answer[0].data }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col col-md-1" >
+      <div (click)="toggleAnswer(faq)" [ngClass]="{'active': faq.showAnswer}" class="custom-button">
+        {{ faq.showAnswer ? '-' : '+' }}
       </div>
     </div>
   </div>
+  
+</div>

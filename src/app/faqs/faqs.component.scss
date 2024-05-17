@@ -1,64 +1,71 @@
-.container{
-    margin-top: 50px;
-  }
-  .faq-section {
-    margin-right: 5px;  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  .faq-section h2{ 
-      text-decoration: none;   
-     color: #685dc5
-   }
-  .filter-by {
-    display: flex;
-   
-    align-items: center;
-  }
+$purple: #685dc5;
+  .container{       
+    width: 1043px;
+    padding-top: 5rem;    
+    border: 1px;
+    border-color: #e6e6e6;
+    margin-bottom: 10rem;    
   
-  .filter-select{  
-   text-align: left;
-  }
+    }
+    .faq-section-header {
+      height: 112px;
+      display: flex;
+      justify-content: space-between;
+    }
+    hr{
+      color:#E6E6E6;
+      opacity: 1.5;
+      height: 1px;
+    }
+    .faq-section-header h2 {
+      text-decoration: none;
+      color: $purple;
+      font-family: 'Apercu Pro Regular', sans-serif;
+    }
+    
+    .filter {
+      width: 317px;
+      height: 58px;
+      align-items: center;
+      border: 1px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .filter-by {      
+      width: 58px;
+      height: 24px;
+      font-family: 'Apercu Pro Regular', sans-serif; 
+      font-weight: 300;
+      font-size: 14px; 
+      line-height: 24px;
+      color: #6A6A6A;
+      letter-spacing: -0.15px;  
+    }
+    
+    .select {
+      position: relative;
+      width: 235px; 
+      height: 58px;
+      right: 0;
+      color: $purple;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid #DADADA;
+      border-radius: 25px;
+      text-align: left;
+      padding-left: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: 'Apercu Pro Regular', sans-serif;
+    }
+    
 
-  .select-container{
-    width: 100%;
-    padding: 10px;
-    color: #685dc5;
-    border: 1px solid #ccc;
-    border-radius: 25px; /* Rounded border */
-    appearance: none; /* Remove default arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;  
-    text-align: center; /* Center align text */
-    cursor: pointer; /* Change cursor on hover */
-  }
-  
-  .select-container::after {  
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none; 
-  }
-  
-  .filter-by label {
-    margin-right: 10px;
-  }
-  
-  .filter-by select {
-    width: 235px;
-    height: 58px;
-    left: 82px;
-    gap: 0px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
+
   li {
     list-style-type: none; 
+    align-items: center;
   }
   
   h3 {
@@ -67,29 +74,115 @@
     font-size:22px ;
     padding-bottom: 5px; 
   }
+
   .types{
-    color: #685dc5;
+    font-size: 22px;
+    color: $purple;
   }
+
   .row{ 
-    margin-top: 50px;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #E6E6E6;     
+    margin-top: 40px;
   }
   
-  button { 
-    top: 0; 
-    right: 0; 
-    border: none;
-    border-radius: 50%; 
+  .custom-button {
+    cursor: pointer;  
+    top: 5px;
+    right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #DADADA;
+    color: #333;
+    font-weight: 100;
+    font-size: 30px;
     width: 48px;
     height: 48px;
     left: 960px;
     gap: 0px;
-  opacity: 0px;
-  
     text-align: center;
   }
   
-  button.active {
-    background-color:#685dc5;
+  .custom-button.active {
+    background-color:$purple;    
+  }
+  
+
+  @media (max-width: 768px) {
+    .container{
+      margin-right: 45;
+      margin-left: 45;
+      padding-right: 54;
+      padding-left: 54;
+      width: auto;
+      height: 532px;
+      left: 43px;
+      top: 45px;
+      gap: 0px;
+      opacity: 0px;
+      
+    }
+    .faq-section-header{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 120px;
+      
+    }
+  
+    .filter {
+      width: 284px;
+      height: 90px;
+      top: 112px;
+      padding-top: 1rem;      
+      gap: 0px;
+      opacity: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+    }
+    
+    .label {
+      width: 82.34px;
+      height: 14px;       
+      gap: 0px;
+      opacity: 0px;
+      
+      
+    }
+    .filter .select {
+      width: 284px;
+      height: 58px;
+      left: 0px;
+      top: 32px;
+      gap: 0px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+      border-color: #dadada;
+      
+    }
+    .row {     
+      display: flex;      
+      margin-bottom: 2rem;
+      .types {
+        
+        display: none;
+      }
+    
+    .col-md-8 {
+      flex: 0 0 78.66667%;
+      max-width: 78.66667%;
+    }
+    .col-md-1 {
+      flex: 0 0 21.33333%;
+      max-width: 21.33333%;
+    }
+    .col button {
+      position: sticky;
+      top: 0;
+      right: 0;
+      left: 0.199px;
+    }
+  }
   }
   

@@ -1,27 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiCallService } from '../shared/api-call.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-faqs',
   templateUrl: './faqs.component.html',
   styleUrls: ['./faqs.component.scss']
 })
-export class FaqsComponent implements OnInit {
+export class FaqsComponent implements OnInit, OnDestroy {
 
   faqs: any[] = [];
   filteredFaqs: any[] = [];
   types: string[] = [];
   selectedType: string = '';
   
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(private faqsdata: ApiCallService) {}
 
   ngOnInit(): void {
-    this. getFaqs();
-   
+    this. getFaqs();   
   }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   getFaqs(): void {
-    this.faqsdata.getData().subscribe((data: any) => {
+    this.faqsdata.getData().pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe((data)=>{
       this.faqs = data.scholarship.faqs.items;
       this.types = data.scholarship.faqs.categories;
       this.types.unshift('All');
@@ -38,11 +47,11 @@ export class FaqsComponent implements OnInit {
       this.filteredFaqs = this.faqs; 
     } else {
       this.filteredFaqs = this.faqs.filter(faq => faq.type === type);
+      console.log(this.filteredFaqs)
     }
   }
-  
- 
-  toggleAnswer(faq: any): void {
+   
+  toggleAnswer(faq: any): void {   
     faq.showAnswer = !faq.showAnswer; 
   }
 }
