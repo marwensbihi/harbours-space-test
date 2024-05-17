@@ -20,7 +20,7 @@ describe('ApiCallService', () => {
   });
 
   it('should retrieve data from the API', () => {
-    const responseData = {};
+    const responseData = {key: 'value'};
 
     service.getData().subscribe(data => {
       expect(data).toEqual(responseData);
